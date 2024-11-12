@@ -346,58 +346,28 @@ Here is the proposed PostgreSQL DBML (Database Markup Language) for the Audiophi
 ```markdown
 // Users and Auth Tables
 Table users {
-id uuid [pk, default: `uuid_generate_v4()`]
+id varchar [pk] // Store OAuth provider's user ID
 name varchar
 email varchar [not null, unique]
-password varchar
-email_verified timestamptz
 image varchar
 created_at timestamptz [default: `now()`]
 updated_at timestamptz [default: `now()`]
-
 indexes {
 email
 }
 }
 
-Table accounts {
-id serial [pk]
-user_id uuid [not null]
-provider varchar [not null]
-provider_account_id varchar [not null]
-refresh_token text
-access_token text
-expires_at integer
-token_type varchar
-scope varchar
-id_token text
-session_state varchar
-created_at timestamptz [default: `now()`]
-updated_at timestamptz [default: `now()`]
-
-indexes {
-(provider, provider_account_id) [unique]
-}
-}
-
-Ref: accounts.user_id > users.id
-
 Table sessions {
-id serial [pk]
-session_token varchar [not null, unique]
-user_id uuid [not null]
+id varchar [pk] // Session token itself can be the ID
+user_id varchar [not null]
 expires timestamptz [not null]
 created_at timestamptz [default: `now()`]
-updated_at timestamptz [default: `now()`]
+indexes {
+expires
+}
 }
 
 Ref: sessions.user_id > users.id
-
-Table verification_tokens {
-identifier varchar [pk]
-token varchar [pk]
-expires timestamptz [not null]
-}
 
 // Product Related Tables
 Table categories {
@@ -416,7 +386,6 @@ features text
 is_new boolean [default: false]
 created_at timestamptz [default: `now()`]
 updated_at timestamptz [default: `now()`]
-
 indexes {
 slug
 }
@@ -424,40 +393,31 @@ slug
 
 Ref: products.category_id > categories.id
 
+Table product_images {
+id serial [pk]
+product_id integer [not null]
+url varchar [not null]
+image_type varchar(50) [not null] // 'mobile', 'tablet', 'desktop'
+usage_type varchar(50) [not null] // 'main', 'gallery', 'category'
+}
+
+Ref: product_images.product_id > products.id [delete: cascade]
+
 Table product_includes {
 id serial [pk]
-product_id integer
+product_id integer [not null]
 item varchar [not null]
 quantity integer [not null]
 }
 
 Ref: product_includes.product_id > products.id [delete: cascade]
 
-Table product_images {
-id serial [pk]
-product_id integer
-mobile_url varchar
-tablet_url varchar
-desktop_url varchar
-image_type varchar(50) [not null] // 'main', 'gallery', 'category'
-}
-
-Ref: product_images.product_id > products.id [delete: cascade]
-
-Table gallery_images {
-id serial [pk]
-product_id integer
-mobile_url varchar
-tablet_url varchar
-desktop_url varchar
-}
-
-Ref: gallery_images.product_id > products.id [delete: cascade]
-
 Table related_products {
-id serial [pk]
 product_id integer
 related_product_id integer
+indexes {
+(product_id, related_product_id) [pk]
+}
 }
 
 Ref: related_products.product_id > products.id [delete: cascade]
@@ -466,20 +426,19 @@ Ref: related_products.related_product_id > products.id
 // Order Related Tables
 Table orders {
 id serial [pk]
-user_id uuid
+user_id varchar [not null]
 total numeric(10,2) [not null]
 shipping_fee numeric(10,2) [not null, default: 50]
 vat numeric(10,2) [not null]
 created_at timestamptz [default: `now()`]
-updated_at timestamptz [default: `now()`]
 }
 
 Ref: orders.user_id > users.id
 
 Table order_items {
 id serial [pk]
-order_id integer
-product_id integer
+order_id integer [not null]
+product_id integer [not null]
 quantity integer [not null]
 price numeric(10,2) [not null]
 }
@@ -490,7 +449,7 @@ Ref: order_items.product_id > products.id
 // Cart Related Tables
 Table carts {
 id serial [pk]
-user_id uuid
+user_id varchar [not null]
 created_at timestamptz [default: `now()`]
 updated_at timestamptz [default: `now()`]
 }
@@ -499,8 +458,8 @@ Ref: carts.user_id > users.id
 
 Table cart_items {
 id serial [pk]
-cart_id integer
-product_id integer
+cart_id integer [not null]
+product_id integer [not null]
 quantity integer [not null]
 }
 
