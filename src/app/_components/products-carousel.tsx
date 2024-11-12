@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ResponsiveImage from "./responsive-image";
 
 export default function ProductsCarousel() {
   return (
@@ -9,11 +9,10 @@ export default function ProductsCarousel() {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="bg-[#F1F1F1] p-8 text-center">
             <div className="relative mb-8 h-40">
-              <Image
-                src="/placeholder.svg"
+              <ResponsiveImage
+                basePath="/assets/shared"
+                imageName="image-category-thumbnail-headphones.png"
                 alt="Headphones"
-                fill
-                className="object-contain"
               />
             </div>
             <h2 className="mb-4 text-lg font-bold">HEADPHONES</h2>
@@ -27,11 +26,10 @@ export default function ProductsCarousel() {
           </div>
           <div className="bg-[#F1F1F1] p-8 text-center">
             <div className="relative mb-8 h-40">
-              <Image
-                src="/placeholder.svg"
+              <ResponsiveImage
+                basePath="/assets/shared"
+                imageName="image-category-thumbnail-speakers.png"
                 alt="Speakers"
-                fill
-                className="object-contain"
               />
             </div>
             <h2 className="mb-4 text-lg font-bold">SPEAKERS</h2>
@@ -45,11 +43,10 @@ export default function ProductsCarousel() {
           </div>
           <div className="bg-[#F1F1F1] p-8 text-center">
             <div className="relative mb-8 h-40">
-              <Image
-                src="/placeholder.svg"
+              <ResponsiveImage
+                basePath="/assets/shared"
+                imageName="image-category-thumbnail-earphones.png"
                 alt="Earphones"
-                fill
-                className="object-contain"
               />
             </div>
             <h2 className="mb-4 text-lg font-bold">EARPHONES</h2>
