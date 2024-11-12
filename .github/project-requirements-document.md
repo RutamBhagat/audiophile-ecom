@@ -127,15 +127,6 @@ for product information.
 
 ---
 
-**5. Steps to Build the Project**
-
-**Step 2: Set Up the Development Environment**
-
-- **Initialize Project**
-
-  - Set up a new Next.js application using `create-next-app`.
-  - Configure TypeScript support if not enabled.
-
 - **Dependencies**
 
   - Use necessary packages:
@@ -162,18 +153,18 @@ for product information.
 
 **Step 4: Implement Routing**
 
-- **Next.js File-based Routing**
+- **Next.js App Routing**
 
   - Set up pages using Next.js conventions.
-    - `pages/index.tsx` for the homepage.
-    - `pages/category/[category].tsx` for category pages.
-    - `pages/product/[slug].tsx` for product detail pages.
-    - `pages/cart.tsx` for the cart page.
-    - `pages/checkout.tsx` for the checkout page.
+    - `src/app/page.tsx` for the homepage.
+    - `src/app/category/[category].tsx` for category pages.
+    - `src/app/product/[slug].tsx` for product detail pages.
+    - `src/app/cart/page.tsx` for the cart page.
+    - `src/app/checkout/page.tsx` for the checkout page.
   - Implement dynamic routes for categories and products.
 
 - **API Routes**
-  - Create API routes under `pages/api` if necessary.
+  - Create API routes under `src/server/api/routers` if necessary and create new file with appropriate name.
   - Set up tRPC endpoints for server-side data fetching.
 
 **Step 5: Build Shared Components**
