@@ -1,5 +1,6 @@
 import { HydrateClient, api } from "~/trpc/server";
 
+import Hero from "./_components/hero";
 import { LatestPost } from "~/app/_components/post";
 import Link from "next/link";
 import { auth } from "~/server/auth";
@@ -14,7 +15,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <div></div>
+      <Hero />
     </HydrateClient>
   );
 }
