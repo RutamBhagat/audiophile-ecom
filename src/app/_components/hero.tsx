@@ -1,33 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
+import ResponsiveImage from "./responsive-image";
 
 export default function Hero() {
   return (
     <div className="bg-[#181818]">
       <section className="relative mx-auto w-full max-w-7xl">
         <div className="absolute inset-0">
-          {/* Desktop image - visible only on lg and above */}
-          <Image
-            src="/assets/home/desktop/image-header.jpg"
+          <ResponsiveImage
+            basePath="/assets/home"
+            imageName="image-header.jpg"
             alt="XX99 MARK II HEADPHONES"
-            fill
-            className="hidden object-contain lg:block"
-            priority
-          />
-          {/* Tablet image - visible only on md to lg */}
-          <Image
-            src="/assets/home/tablet/image-header.jpg"
-            alt="XX99 MARK II HEADPHONES"
-            fill
-            className="hidden object-contain md:block lg:hidden"
-            priority
-          />
-          {/* Mobile image - visible only on sm and below */}
-          <Image
-            src="/assets/home/mobile/image-header.jpg"
-            alt="XX99 MARK II HEADPHONES"
-            fill
-            className="block object-contain md:hidden"
             priority
           />
         </div>
