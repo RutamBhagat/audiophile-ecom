@@ -1,343 +1,134 @@
-**Product Requirements Document for Audiophile E-commerce Website**
+Got it! Here’s a refined PRD that keeps the **Database Markup Language (DBML)**, **Packages**, **Tech Stack**, and expands on **Pages and Features** for a more detailed outline.
 
 ---
 
-**1. Introduction**
-
-The goal is to build a multi-page e-commerce website for Audiophile, selling high-end audio products. The website should closely match the provided designs and offer a seamless user experience across devices. The project utilizes Next.js, Tailwind CSS, tRPC, Drizzle ORM, NextAuth, PostgreSQL, and Shadcn UI components.
+# Product Requirements Document (PRD) - Audiophile E-Commerce Website
 
 ---
 
-**2. Project Objectives**
+## 1. Introduction
 
-- Create a responsive e-commerce website with multi-page functionality.
-- Implement all required features as specified in the challenge.
-- Ensure optimal layout and performance on various screen sizes.
-- Utilize the provided images and data effectively in the project.
+The Audiophile E-Commerce Website will provide a premium shopping experience for high-end audio products. The project involves building a responsive, multi-page e-commerce website using provided designs to deliver an immersive user experience.
 
----
+### Tech Stack
 
-**3. Functional Requirements**
+The website will leverage the following technologies:
 
-**3.1 Pages Needed**
-
-- **Homepage**
-
-  - Hero section with featured products.
-  - Navigation to product categories.
-  - Sections showcasing different products.
-
-- **Category Pages**
-
-  - **Headphones**
-  - **Speakers**
-  - **Earphones**
-  - Each category page lists relevant products.
-
-- **Product Detail Pages**
-
-  - Detailed view of each product.
-  - Images, descriptions, features, and included items.
-
-- **Cart Page**
-
-  - Overview of selected products.
-  - Ability to edit quantities or remove items.
-
-- **Checkout Page**
-
-  - Form to collect user information and payment details.
-  - Input validation and error handling.
-
-- **Order Confirmation Modal**
-
-  - Summary of the order.
-  - Confirmation message.
-
-- **Shared Components**
-  - Header with navigation links and cart icon.
-  - Footer with company information and social media links.
-
-**3.2 Functionality Requirements**
-
-- **Responsive Design**
-
-  - Layout adjusts for mobile, tablet, and desktop.
-
-- **Navigation**
-
-  - Accessible from all pages.
-  - Mobile menu for smaller screens.
-
-- **Cart Management**
-
-  - Add/remove products.
-  - Edit product quantities.
-  - Persistent state (bonus using `localStorage`).
-
-- **Checkout Process**
-
-  - Form fields for billing, shipping, and payment details.
-  - Shipping adds $50 to the order total.
-  - VAT calculated at 20% of product total (excluding shipping).
-  - Form validation with feedback.
-
-- **Order Confirmation**
-
-  - Modal displaying order summary.
-  - Confirmation of successful checkout.
-
-- **Hover States**
-
-  - Visual feedback on interactive elements.
-
-- **Data Handling**
-  - Use
-
-data.json
-
-for product information.
-
-- **Accessibility**
-  - Compliant with accessibility standards.
+- **Next.js**: For server-side rendering and routing.
+- **Tailwind CSS**: For utility-first, responsive styling.
+- **tRPC**: For type-safe API communication.
+- **Drizzle ORM**: For efficient database operations.
+- **NextAuth**: For secure authentication.
+- **PostgreSQL**: As the primary relational database.
+- **Shadcn UI Components**: For a cohesive UI framework.
 
 ---
 
-**4. Technical Requirements**
+## 2. Goals
 
-- **Frameworks & Libraries**
+### Business Goals
 
-  - Next.js for server-side rendering and routing.
-  - Tailwind CSS for styling.
-  - tRPC for type-safe API communication.
-  - Drizzle ORM for database interactions.
-  - NextAuth for authentication.
-  - Shadcn UI components for consistent UI.
+- Provide a high-end, seamless shopping experience that enhances customer engagement and brand perception.
+- Encourage repeat purchases by simplifying product discovery, checkout, and follow-up interactions.
+- Create an optimized checkout process to improve conversion rates.
 
-- **Database**
+### User Goals
 
-  - PostgreSQL for storing user data and orders.
-
-- **State Management**
-
-  - Use React Context or a state management library for cart state.
-
-- **Development Environment**
-  - Linux machine with Visual Studio Code IDE.
+- Enable users to explore products, view detailed specifications, and make purchases seamlessly.
+- Support device adaptability, providing a streamlined experience across mobile, tablet, and desktop.
+- Simplify the cart and checkout experience, with clear visual feedback, navigation, and order confirmation.
 
 ---
 
-- **Dependencies**
+## 3. Functional Requirements
 
-  - Use necessary packages:
-    - `tailwindcss` for styling.
-    - `@trpc/server` and `@trpc/client` for tRPC.
-    - `drizzle-orm` for database interactions.
-    - `next-auth` for authentication.
-    - `@shadcn/ui` for UI components.
-    - `react-hook-form` and `zod` for form handling and validation.
-    - Any other utilities like `clsx` for conditional classNames from utils folder.
+### Pages and Features
 
-**Step 3: Organize Project Structure**
+#### 1. **Homepage**
 
-- **Folder Structure**
+- **Hero Section**: Display a featured product with an eye-catching image and CTA (e.g., “Shop Now”).
+- **Category Navigation**: Provide clear navigation to key product categories (Headphones, Speakers, Earphones).
+- **Featured Products**: Showcase popular or new products with high-quality images, brief descriptions, and “See Product” buttons.
+- **About Us**: Introduce Audiophile with brand messaging, establishing trust and credibility with users.
 
-  - Create directories for components, pages, hooks, contexts, and utilities.
-  - Organize components into reusable UI elements and page-specific components.
+#### 2. **Category Pages** (Headphones, Speakers, Earphones)
 
-- **Assets**
+- **Product Listings**: Display relevant products in each category, including images, descriptions, prices, and “See Product” buttons.
+- **Alternate Layout**: Use varying layouts for product information to create a visually appealing page, avoiding repetitive design.
+- **Responsive Grid**: Use a responsive grid layout to accommodate different screen sizes and orientations.
 
-  - Use all static images and assets in the public folder.
+#### 3. **Product Detail Pages**
 
-- Organize assets into subfolders corresponding to their usage.
+- **Product Overview**: Display a large product image, name, price, and detailed description.
+- **Quantity Selector**: Include a quantity selector to allow users to add multiple items to the cart.
+- **Features Section**: List product features and specifications clearly.
+- **In the Box**: Display items included with the product in a styled list format.
+- **Image Gallery**: Showcase additional images from different angles or settings (optional carousel or lightbox).
+- **Related Products**: Display similar or complementary products that might interest the user.
 
-**Step 4: Implement Routing**
+#### 4. **Cart Page**
 
-- **Next.js App Routing**
+- **Cart Overview**: Display selected items with images, names, prices, and quantity controls.
+- **Update Options**: Allow users to edit item quantities, remove items, and see real-time price updates.
+- **Summary Section**: Show the subtotal, shipping costs, VAT, and the total price.
+- **Proceed to Checkout**: Prominent button for users to proceed to the checkout page.
 
-  - Set up pages using Next.js conventions.
-    - `src/app/page.tsx` for the homepage.
-    - `src/app/category/[category].tsx` for category pages.
-    - `src/app/product/[slug].tsx` for product detail pages.
-    - `src/app/cart/page.tsx` for the cart page.
-    - `src/app/checkout/page.tsx` for the checkout page.
-  - Implement dynamic routes for categories and products.
+#### 5. **Checkout Page**
 
-- **API Routes**
-  - Create API routes under `src/server/api/routers` if necessary and create new file with appropriate name.
-  - Set up tRPC endpoints for server-side data fetching.
+- **Billing Details**: Collect basic information (name, email, phone number).
+- **Shipping Info**: Collect shipping address details (street, city, country, ZIP).
+- **Payment Details**: Include a selection for payment method (Cash on Delivery or Credit Card).
+- **Credit Card Form**: Display card number, expiry date, and CVV fields if credit card is selected.
+- **Order Summary**: Display a final order summary with product details, shipping, VAT, and total.
+- **Form Validation**: Real-time validation to ensure all fields are correctly filled before submission.
 
-**Step 5: Build Shared Components**
+#### 6. **Order Confirmation Modal**
 
-- **Header Component**
+- **Confirmation Message**: Thank the user for their purchase with an order summary.
+- **Order Summary**: Display a list of purchased items, including product details and total amount charged.
+- **Actions**: Option to return to the homepage or continue shopping.
 
-  - Logo linking to the homepage.
-  - Navigation links to categories.
-  - Cart icon with item count.
-  - Mobile navigation menu with a hamburger icon.
+#### Additional Pages (Optional):
 
-- **Footer Component**
+- **User Authentication**: Login, registration, and password recovery.
+- **User Profile**: Account page where users can view and edit personal information, track order history, and update preferences.
+- **Static Pages**: About Us, Contact, FAQ, and Terms of Service.
 
-  - Company information.
-  - Links to other pages and policies.
-  - Social media icons and links.
+### Shared Components
 
-- **UI Elements**
+1. **Header**:
 
-  - Buttons, inputs, modals, and form components.
-  - Use Shadcn UI for consistent styling.
+   - Logo that links to the homepage.
+   - Navigation links for each category.
+   - Cart icon with an item count indicator.
+   - Mobile menu with a hamburger icon on smaller screens.
 
-- **Product Components**
-  - Product cards for listing.
-  - Product detail components for displaying detailed information.
+2. **Footer**:
 
-**Step 6: Develop Pages**
+   - Company information and links to policy pages.
+   - Social media icons for external linking.
 
-- **Homepage**
-
-  - **Hero Section**
-    - Feature a top product with an engaging image and a call-to-action button.
-    - Responsive design ensuring the image and text are well-positioned on all devices.
-  - **Category Sections**
-    - Display categories with images and links to category pages.
-    - Ensure accessibility with proper alt text and labels.
-  - **Featured Products**
-    - Highlight select products with images, brief descriptions, and 'See Product' buttons.
-    - Use a grid or carousel layout for better user engagement.
-  - **About Us**
-    - Include a section with information about the company.
-    - Use imagery and text to convey brand values.
-
-- **Category Pages**
-  - **Product Listings**
-    - Fetch products based on category from
-
-data.json
-
-or database. - Display product images, names, brief descriptions, and 'See Product' buttons. - Alternate the layout of product information for visual interest.
-
-- **Pagination or Filtering** (Optional)
-
-  - Implement pagination if there are many products.
-  - Allow users to filter or sort products.
-
-- **Product Detail Pages**
-
-  - **Product Overview**
-    - High-resolution images suitable for different screen sizes.
-    - Product name, price, detailed description, and 'Add to Cart' functionality.
-    - Quantity selector for adding multiple items.
-  - **Features Section**
-    - Detailed product features and specifications.
-    - Use proper formatting for readability.
-  - **In the Box**
-    - List included items with quantities.
-    - Present as a styled list or table.
-  - **Image Gallery**
-    - Additional images showcasing different angles or uses of the product.
-    - Implement a lightbox or carousel if necessary.
-  - **Related Products**
-    - Showcase other products the user might be interested in.
-    - Include images and links to their product detail pages.
-
-- **Cart Page**
-
-  - **Cart Items**
-    - List items with images, names, prices, quantities, and total price per item.
-    - Ability to update quantities or remove items.
-  - **Summary Section**
-    - Display subtotal, shipping cost, VAT, and total price.
-    - 'Continue to Checkout' button to proceed.
-
-- **Checkout Page**
-
-  - **Billing Details**
-    - Form fields for name, email, phone number.
-  - **Shipping Info**
-    - Address fields including street, city, country, and ZIP code.
-  - **Payment Details**
-    - Payment method selection.
-    - If 'Cash on Delivery', display additional instructions.
-    - If 'Credit Card', display card number, expiry date, and CVV fields.
-  - **Form Validation**
-    - Use `react-hook-form` and `zod` for form handling and validation.
-    - Show error messages and highlight invalid fields.
-
-- **Order Confirmation Modal**
-
-  - **Confirmation Message**
-    - Thank the user for their purchase.
-    - Brief summary of the order.
-  - **Order Summary**
-    - Display the first few items and indicate if more items are included.
-    - Show the total amount charged.
-  - **Actions**
-    - 'Back to Home' button or option to view more products.
-
-- **Additional Pages**
-  - **Authentication Pages**
-    - Login and registration pages if implementing user accounts.
-    - Password reset functionality.
-  - **User Profile** (Optional)
-    - Allow users to view and edit their profile information.
-    - Display past orders and order details.
-  - **Static Pages**
-    - About Us, Contact, FAQ, and Terms of Service pages.
-
-**Step 7: Implement State Management**
-
-- **Global State**
-
-  - Use React Context or a library like Zustand for managing cart state.
-  - Ensure state updates trigger re-renders where necessary.
-
-- **Persisting Cart Data**
-  - Implement persistence using `localStorage`.
-  - On application load, initialize state from `localStorage`.
-  - Subscribe to state changes to update `localStorage`.
-
-**Step 8: Add Interactivity**
-
-- **Hover and Active States**
-
-  - Use Tailwind CSS pseudo-class variants for styling interactive states.
-  - Ensure that hover states are accessible (e.g., also using focus states for keyboard navigation).
-
-- **Form Interactions**
-
-  - Provide instant feedback on form inputs.
-  - Disable form submission until all fields are valid.
-
-- **Modals and Notifications**
-  - Use state to control the visibility of modals.
-  - Implement transition effects for modals and other interactive elements.
-
-**Step 9: Ensure Responsiveness**
-
-- **Mobile-First Approach**
-
-  - Start styling components for small screens and scale up.
-  - Use responsive units like `rem` and percentages.
-
-- **Media Queries**
-
-  - Utilize Tailwind CSS breakpoints to adjust layout and styling.
-  - Test on multiple devices or emulators.
-
-- **Image Optimization**
-  - Use Next.js Image component for automatic image optimization.
-  - Serve appropriately sized images based on device screen size.
+3. **UI Elements**:
+   - Buttons, inputs, modals, form components for consistency.
+   - Use Shadcn UI for coherent design and Tailwind for responsive styling.
 
 ---
 
-**6. Database Considerations**
+## 4. Technical Requirements
 
-Here is the proposed PostgreSQL DBML (Database Markup Language) for the Audiophile e-commerce website:
+### State Management
+
+- Use **React Context** or **Zustand** for managing the cart state and user session.
+- Cart state should persist across page refreshes using `localStorage`.
+
+### Database Structure (DBML)
+
+Here is the proposed **PostgreSQL DBML** for the Audiophile E-Commerce Website:
 
 ```markdown
-// Users and Auth Tables
+// User-Related Tables
 Table users {
-id varchar [pk] // Store OAuth provider's user ID
+id varchar [pk] // OAuth provider's user ID
 name varchar
 email varchar [not null, unique]
 image varchar
@@ -349,7 +140,7 @@ email
 }
 
 Table sessions {
-id varchar [pk] // Session token itself can be the ID
+id varchar [pk] // Session token as ID
 user_id varchar [not null]
 expires timestamptz [not null]
 created_at timestamptz [default: `now()`]
@@ -360,7 +151,7 @@ expires
 
 Ref: sessions.user_id > users.id
 
-// Product Related Tables
+// Product-Related Tables
 Table categories {
 id serial [pk]
 name varchar [not null, unique]
@@ -388,8 +179,8 @@ Table product_images {
 id serial [pk]
 product_id integer [not null]
 url varchar [not null]
-image_type varchar(50) [not null] // 'mobile', 'tablet', 'desktop'
-usage_type varchar(50) [not null] // 'main', 'gallery', 'category'
+image_type varchar(50) // 'mobile', 'tablet', 'desktop'
+usage_type varchar(50) // 'main', 'gallery', 'category'
 }
 
 Ref: product_images.product_id > products.id [delete: cascade]
@@ -414,7 +205,7 @@ indexes {
 Ref: related_products.product_id > products.id [delete: cascade]
 Ref: related_products.related_product_id > products.id
 
-// Order Related Tables
+// Order-Related Tables
 Table orders {
 id serial [pk]
 user_id varchar [not null]
@@ -437,7 +228,7 @@ price numeric(10,2) [not null]
 Ref: order_items.order_id > orders.id [delete: cascade]
 Ref: order_items.product_id > products.id
 
-// Cart Related Tables
+// Cart-Related Tables
 Table carts {
 id serial [pk]
 user_id varchar [not null]
@@ -458,53 +249,110 @@ Ref: cart_items.cart_id > carts.id [delete: cascade]
 Ref: cart_items.product_id > products.id
 ```
 
-**Relationships:**
+### Relationships:
 
-- **Users**
-
-  - Can have multiple **accounts** (for social authentication).
-  - Can have multiple **sessions**.
-  - Can have multiple **orders**.
-  - Can have a **cart** (if server-side cart is used).
-
-- **Products**
-
-  - Belong to a **category**.
-  - Have multiple **product includes**, **product images**, and **gallery images**.
-  - Can be related to other **products**.
-
-- **Orders**
-
-  - Belong to a **user**.
-  - Have multiple **order items**.
-
-- **Order Items**
-
-  - Belong to an **order**.
-  - Reference a **product**.
-
-- **Carts** (Optional)
-
-  - Belong to a **user**.
-  - Have multiple **cart items**.
-
-- **Cart Items**
-  - Belong to a **cart**.
-  - Reference a **product**.
+- **Users**: Can have multiple **orders**, **sessions**, and optionally a **cart**.
+- **Products**: Belong to a **category**, can have multiple **images**, and have **related products**.
+- **Orders**: Include multiple **order items**, each linked to a **product**.
+- **Cart** (Optional): Linked to **users** and includes multiple **cart items**.
 
 ---
 
-**10. Additional NPM Packages**
+## 5. Additional Packages
 
-Here are some additional npm packages that might help with this project:
+The following additional npm packages are used for specific functionalities:
 
-- **`react-hook-form`**: For building forms with easy validation.
-- **`zod`**: TypeScript-first schema validation with static type inference.
-- **`axios`**: Promise-based HTTP client for the browser and Node.js.
-- **`clsx`**: Utility for constructing `className` strings conditionally.
-- **`date-fns`**: Modern JavaScript date utility library.
-- **`zustand`**: Fast and scalable state management solution.
-- **`lucide-react`**: Beautiful and customizable SVG icons.
-- **`tanstack router`**: React Hooks library for data fetching.
+- \*\*`react-hook-form
+
+`\*\*: For form handling and validation.
+
+- **`zod`**: Type-safe schema validation with TypeScript support.
+- **`axios`**: HTTP client for making API requests.
+- **`clsx`**: Conditional utility for className strings.
+- **`date-fns`**: JavaScript date utility library.
+- **`zustand`**: Lightweight state management.
+- **`lucide-react`**: SVG icons.
+- **`tanstack router`**: Enhanced data fetching for React apps.
 
 ---
+
+## 6. Implementation Steps
+
+1. **Setup**: Initialize the repository, install dependencies, and configure Tailwind and NextAuth.
+2. **Develop Components**: Build core UI components (header, footer, modals, etc.).
+3. **Create Pages**: Implement main pages and test layout and functionality.
+4. **Data Integration**: Fetch product data from `data.json` or PostgreSQL.
+5. **Add Interactivity**: Manage cart state and form validation.
+6. **Responsive Design**: Optimize layouts across devices.
+7. **Testing & QA**: Verify usability, accessibility, and fix issues.
+8. **Deployment**: Deploy using Vercel, Netlify, or GitHub Pages.
+
+This refined PRD should provide clarity and a step-by-step approach to delivering a fully functional, user-friendly e-commerce experience for Audiophile. Let me know if there’s anything more to add!
+
+## 7. Current folder strcture
+
+```
+.
+├── .env.example
+├── .eslintrc.cjs
+├── .github
+│   └── project-requirements-document.md
+├── .gitignore
+├── README.md
+├── README_CHALLENGE.md
+├── bun.lockb
+├── components.json
+├── data.json
+├── drizzle.config.ts
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── prettier.config.js
+├── src
+│   ├── app
+│   │   ├── _components
+│   │   │   └── post.tsx
+│   │   ├── api
+│   │   │   ├── auth
+│   │   │   │   └── [...nextauth]
+│   │   │   │       └── route.ts
+│   │   │   └── trpc
+│   │   │       └── [trpc]
+│   │   │           └── route.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components
+│   │   └── ui
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── select.tsx
+│   │       └── sonner.tsx
+│   ├── env.js
+│   ├── lib
+│   │   └── utils.ts
+│   ├── server
+│   │   ├── api
+│   │   │   ├── root.ts
+│   │   │   ├── routers
+│   │   │   │   └── post.ts
+│   │   │   └── trpc.ts
+│   │   ├── auth
+│   │   │   ├── config.ts
+│   │   │   └── index.ts
+│   │   └── db
+│   │       ├── index.ts
+│   │       └── schema.ts
+│   ├── styles
+│   │   └── globals.css
+│   └── trpc
+│       ├── query-client.ts
+│       ├── react.tsx
+│       └── server.ts
+├── start-database.sh
+├── tailwind.config.ts
+└── tsconfig.json
+
+20 directories, 41 files
+```
