@@ -3,6 +3,7 @@ import { HydrateClient, api } from "~/trpc/server";
 import Hero from "./_components/hero";
 import { LatestPost } from "~/app/_components/post";
 import Link from "next/link";
+import ProductCategories from "./_components/product-categories";
 import ProductsCarousel from "./_components/products-carousel";
 import { auth } from "~/server/auth";
 
@@ -18,6 +19,7 @@ export default async function Home() {
     <HydrateClient>
       <Hero />
       <ProductsCarousel />
+      <ProductCategories />
     </HydrateClient>
   );
 }

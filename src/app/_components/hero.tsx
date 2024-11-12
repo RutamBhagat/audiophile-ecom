@@ -7,6 +7,7 @@ export default function Hero() {
       <section className="relative mx-auto w-full max-w-7xl">
         <div className="absolute inset-0">
           <ResponsiveImage
+            className="object-contain"
             basePath="/assets/home"
             imageName="image-header.jpg"
             alt="XX99 MARK II HEADPHONES"

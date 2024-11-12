@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { type ClassValue } from "clsx";
+import { cn } from "~/lib/utils";
 
 interface ResponsiveImageProps {
   basePath: string;
   imageName: string;
   alt: string;
   priority?: boolean;
+  className?: ClassValue;
 }
 
 export default function ResponsiveImage({
@@ -12,6 +15,7 @@ export default function ResponsiveImage({
   imageName,
   alt,
   priority = false,
+  className,
 }: ResponsiveImageProps) {
   const desktopSrc = `${basePath}/desktop/${imageName}`;
   const tabletSrc = `${basePath}/tablet/${imageName}`;
@@ -23,21 +27,21 @@ export default function ResponsiveImage({
         src={desktopSrc}
         alt={alt}
         fill
-        className="hidden object-contain lg:block"
+        className={cn(className, "hidden object-cover lg:block")}
         priority={priority}
       />
       <Image
         src={tabletSrc}
         alt={alt}
         fill
-        className="hidden object-contain md:block lg:hidden"
+        className={cn(className, "hidden object-cover md:block lg:hidden")}
         priority={priority}
       />
       <Image
         src={mobileSrc}
         alt={alt}
         fill
-        className="block object-contain md:hidden"
+        className={cn(className, "block object-cover md:hidden")}
         priority={priority}
       />
     </>
