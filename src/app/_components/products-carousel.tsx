@@ -8,8 +8,9 @@ export default function ProductsCarousel() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="bg-[#F1F1F1] p-8 text-center">
-            <div className="relative mb-8 h-40">
+            <div className="relative mb-8 h-80">
               <ResponsiveImage
+                className="object-cover"
                 basePath="/assets/shared"
                 imageName="image-category-thumbnail-headphones.png"
                 alt="Headphones"
@@ -25,8 +26,9 @@ export default function ProductsCarousel() {
             </Link>
           </div>
           <div className="bg-[#F1F1F1] p-8 text-center">
-            <div className="relative mb-8 h-40">
+            <div className="relative mb-8 h-80">
               <ResponsiveImage
+                className="object-cover"
                 basePath="/assets/shared"
                 imageName="image-category-thumbnail-speakers.png"
                 alt="Speakers"
@@ -42,8 +44,9 @@ export default function ProductsCarousel() {
             </Link>
           </div>
           <div className="bg-[#F1F1F1] p-8 text-center">
-            <div className="relative mb-8 h-40">
+            <div className="relative mb-8 h-80">
               <ResponsiveImage
+                className="object-cover"
                 basePath="/assets/shared"
                 imageName="image-category-thumbnail-earphones.png"
                 alt="Earphones"

@@ -27,21 +27,21 @@ export default function ResponsiveImage({
         src={desktopSrc}
         alt={alt}
         fill
-        className={cn(className, "hidden object-cover lg:block")}
+        className={cn(className, "hidden lg:block")}
         priority={priority}
       />
       <Image
         src={tabletSrc}
         alt={alt}
         fill
-        className={cn(className, "hidden object-cover md:block lg:hidden")}
+        className={cn(className, "hidden md:block lg:hidden")}
         priority={priority}
       />
       <Image
         src={mobileSrc}
         alt={alt}
         fill
-        className={cn(className, "block object-cover md:hidden")}
+        className={cn(className, "block md:hidden")}
         priority={priority}
       />
     </>
