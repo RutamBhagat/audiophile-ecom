@@ -37,27 +37,25 @@ export default function ProductCategories() {
           </div>
 
           {/* ZX7 Speaker */}
-          <div className="relative overflow-hidden rounded-lg bg-[#f1f1f1] p-8 md:p-12">
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold tracking-wider text-black md:text-4xl">
-                  ZX7 SPEAKER
-                </h2>
-                <Link
-                  href="#"
-                  className="inline-flex h-12 items-center justify-center border border-black bg-transparent px-8 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white"
-                >
-                  SEE PRODUCT
-                </Link>
-              </div>
-              <div className="relative h-48 w-full md:h-64 lg:h-80">
-                <ResponsiveImage
-                  basePath="/assets/home"
-                  imageName="image-speaker-zx7.jpg"
-                  alt="ZX7 SPEAKER"
-                  className="object-cover"
-                />
-              </div>
+          <div className="relative flex min-h-[320px] items-center overflow-hidden rounded-lg bg-[#f1f1f1]">
+            <div className="absolute inset-0 h-full w-full">
+              <ResponsiveImage
+                basePath="/assets/home"
+                imageName="image-speaker-zx7.jpg"
+                alt="ZX7 SPEAKER"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative z-10 space-y-6 p-8 md:p-12">
+              <h2 className="text-3xl font-bold tracking-wider text-black md:text-4xl">
+                ZX7 SPEAKER
+              </h2>
+              <Link
+                href="#"
+                className="inline-flex h-12 items-center justify-center border border-black bg-transparent px-8 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white"
+              >
+                SEE PRODUCT
+              </Link>
             </div>
           </div>
 
