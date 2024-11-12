@@ -341,136 +341,171 @@ or database. - Display product images, names, brief descriptions, and 'See Produ
 
 **6. Database Considerations**
 
-Here is the proposed PostgreSQL database schema for the Audiophile e-commerce website:
+Here is the proposed PostgreSQL DBML (Database Markup Language) for the Audiophile e-commerce website:
 
 ```markdown
-[users]
-\*id {PK, D:uuid_generate_v4()} UUID
-name VARCHAR(255)
-email {NN, UQ} VARCHAR(255)
-password VARCHAR(255)
-email_verified TIMESTAMPTZ
-image VARCHAR(255)
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-Indexes {
-idx_users_email (email)
+// Users and Auth Tables
+Table users {
+id uuid [pk, default: `uuid_generate_v4()`]
+name varchar
+email varchar [not null, unique]
+password varchar
+email_verified timestamptz
+image varchar
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
+
+indexes {
+email
+}
 }
 
-[accounts]
-\*id {PK, AI} SERIAL
-user_id {FK > users.id, NN} UUID
-provider {NN} VARCHAR(255)
-provider_account_id {NN} VARCHAR(255)
-refresh_token TEXT
-access_token TEXT
-expires_at INTEGER
-token_type VARCHAR(255)
-scope VARCHAR(255)
-id_token TEXT
-session_state VARCHAR(255)
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-Constraints {
-UQ(provider, provider_account_id)
+Table accounts {
+id serial [pk]
+user_id uuid [not null]
+provider varchar [not null]
+provider_account_id varchar [not null]
+refresh_token text
+access_token text
+expires_at integer
+token_type varchar
+scope varchar
+id_token text
+session_state varchar
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
+
+indexes {
+(provider, provider_account_id) [unique]
+}
 }
 
-[sessions]
-\*id {PK, AI} SERIAL
-session_token {NN, UQ} VARCHAR(255)
-user_id {FK > users.id, NN} UUID
-expires {NN} TIMESTAMPTZ
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
+Ref: accounts.user_id > users.id
 
-[verification_tokens]
-*identifier {PK} VARCHAR(255)
-*token {PK} VARCHAR(255)
-expires {NN} TIMESTAMPTZ
-
-[categories]
-\*id {PK, AI} SERIAL
-name {NN, UQ} VARCHAR(255)
-
-[products]
-\*id {PK, AI} SERIAL
-slug {NN, UQ} VARCHAR(255)
-name {NN} VARCHAR(255)
-category_id {FK > categories.id} INTEGER
-price {NN} NUMERIC(10,2)
-description TEXT
-features TEXT
-is_new {D:FALSE} BOOLEAN
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-Indexes {
-idx_products_slug (slug)
+Table sessions {
+id serial [pk]
+session_token varchar [not null, unique]
+user_id uuid [not null]
+expires timestamptz [not null]
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
 }
 
-[product_includes]
-\*id {PK, AI} SERIAL
-product_id {FK > products.id, CASCADE} INTEGER
-item {NN} VARCHAR(255)
-quantity {NN} INTEGER
+Ref: sessions.user_id > users.id
 
-[product_images]
-\*id {PK, AI} SERIAL
-product_id {FK > products.id, CASCADE} INTEGER
-mobile_url VARCHAR(255)
-tablet_url VARCHAR(255)
-desktop_url VARCHAR(255)
-image_type {NN} VARCHAR(50)
+Table verification_tokens {
+identifier varchar [pk]
+token varchar [pk]
+expires timestamptz [not null]
+}
 
-[gallery_images]
-\*id {PK, AI} SERIAL
-product_id {FK > products.id, CASCADE} INTEGER
-mobile_url VARCHAR(255)
-tablet_url VARCHAR(255)
-desktop_url VARCHAR(255)
+// Product Related Tables
+Table categories {
+id serial [pk]
+name varchar [not null, unique]
+}
 
-[related_products]
-\*id {PK, AI} SERIAL
-product_id {FK > products.id, CASCADE} INTEGER
-related_product_id {FK > products.id} INTEGER
+Table products {
+id serial [pk]
+slug varchar [not null, unique]
+name varchar [not null]
+category_id integer
+price numeric(10,2) [not null]
+description text
+features text
+is_new boolean [default: false]
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
 
-[orders]
-\*id {PK, AI} SERIAL
-user_id {FK > users.id} UUID
-total {NN} NUMERIC(10,2)
-shipping_fee {NN, D:50} NUMERIC(10,2)
-vat {NN} NUMERIC(10,2)
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
+indexes {
+slug
+}
+}
 
-[order_items]
-\*id {PK, AI} SERIAL
-order_id {FK > orders.id, CASCADE} INTEGER
-product_id {FK > products.id} INTEGER
-quantity {NN} INTEGER
-price {NN} NUMERIC(10,2)
+Ref: products.category_id > categories.id
 
-[carts]
-\*id {PK, AI} SERIAL
-user_id {FK > users.id} UUID
-created_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
-updated_at {D:CURRENT_TIMESTAMP} TIMESTAMPTZ
+Table product_includes {
+id serial [pk]
+product_id integer
+item varchar [not null]
+quantity integer [not null]
+}
 
-[cart_items]
-\*id {PK, AI} SERIAL
-cart_id {FK > carts.id, CASCADE} INTEGER
-product_id {FK > products.id} INTEGER
-quantity {NN} INTEGER
+Ref: product_includes.product_id > products.id [delete: cascade]
 
-Legend:
-PK = Primary Key
-FK = Foreign Key
-NN = Not Null
-AI = Auto Increment
-UQ = Unique
-D: = Default Value
+Table product_images {
+id serial [pk]
+product_id integer
+mobile_url varchar
+tablet_url varchar
+desktop_url varchar
+image_type varchar(50) [not null] // 'main', 'gallery', 'category'
+}
 
-> = References
-> CASCADE = Delete cascade
+Ref: product_images.product_id > products.id [delete: cascade]
+
+Table gallery_images {
+id serial [pk]
+product_id integer
+mobile_url varchar
+tablet_url varchar
+desktop_url varchar
+}
+
+Ref: gallery_images.product_id > products.id [delete: cascade]
+
+Table related_products {
+id serial [pk]
+product_id integer
+related_product_id integer
+}
+
+Ref: related_products.product_id > products.id [delete: cascade]
+Ref: related_products.related_product_id > products.id
+
+// Order Related Tables
+Table orders {
+id serial [pk]
+user_id uuid
+total numeric(10,2) [not null]
+shipping_fee numeric(10,2) [not null, default: 50]
+vat numeric(10,2) [not null]
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
+}
+
+Ref: orders.user_id > users.id
+
+Table order_items {
+id serial [pk]
+order_id integer
+product_id integer
+quantity integer [not null]
+price numeric(10,2) [not null]
+}
+
+Ref: order_items.order_id > orders.id [delete: cascade]
+Ref: order_items.product_id > products.id
+
+// Cart Related Tables
+Table carts {
+id serial [pk]
+user_id uuid
+created_at timestamptz [default: `now()`]
+updated_at timestamptz [default: `now()`]
+}
+
+Ref: carts.user_id > users.id
+
+Table cart_items {
+id serial [pk]
+cart_id integer
+product_id integer
+quantity integer [not null]
+}
+
+Ref: cart_items.cart_id > carts.id [delete: cascade]
+Ref: cart_items.product_id > products.id
 ```
 
 **Relationships:**
