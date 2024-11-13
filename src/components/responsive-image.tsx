@@ -26,21 +26,24 @@ export default function ResponsiveImage({
       <Image
         src={desktopSrc}
         alt={alt}
-        fill
+        width={1920}
+        height={1080}
         className={cn(className, "hidden lg:block")}
         priority={priority}
       />
       <Image
         src={tabletSrc}
         alt={alt}
-        fill
+        width={1920}
+        height={1080}
         className={cn(className, "hidden md:block lg:hidden")}
         priority={priority}
       />
       <Image
         src={mobileSrc}
         alt={alt}
-        fill
+        width={1920}
+        height={1080}
         className={cn(className, "block md:hidden")}
         priority={priority}
       />
