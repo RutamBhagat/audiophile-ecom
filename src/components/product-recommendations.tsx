@@ -1,7 +1,7 @@
 import { Card, CardContent } from "~/components/ui/card";
 
 import { Button } from "~/components/ui/button";
-import Categories from "~/components/categories";
+import ProductsCarousel from "./products-carousel";
 import ResponsiveImage from "~/components/responsive-image";
 
 export default function ProductRecommendations() {
@@ -79,7 +79,7 @@ export default function ProductRecommendations() {
         </div>
 
         {/* Categories Section */}
-        <Categories />
+        <ProductsCarousel />
       </section>
     </div>
   );
