@@ -14,8 +14,10 @@ import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
+import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { Input } from "~/components/ui/input";
+import Link from "next/link";
 import { PhoneInput } from "~/components/ui/phone-input";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -51,13 +53,13 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-[#F1F1F1] px-6 py-8 md:px-10 md:py-12">
       <div className="mx-auto max-w-[1110px]">
-        <Button
-          variant="ghost"
-          className="mb-6 px-0 text-[15px] font-medium text-black/50 hover:text-black"
-          onClick={() => window.history.back()}
+        <Link
+          href="#"
+          className="mb-8 inline-flex items-center text-sm text-muted-foreground hover:text-primary"
         >
+          <ChevronLeft className="mr-2 h-4 w-4" />
           Go Back
-        </Button>
+        </Link>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_350px]">
           <Card className="rounded-none bg-white p-6 md:p-12">
