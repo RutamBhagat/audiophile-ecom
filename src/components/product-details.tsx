@@ -22,7 +22,7 @@ export default function ProductDetails({ productId }: ProductDetailsProps) {
       <div className="grid items-start gap-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-none bg-[#F1F1F1]">
           <ResponsiveImage
-            basePath="/assets/product-xx99-mark-two-headphones"
+            basePath={`/assets/product-${productId}`}
             imageName="image-product.jpg"
             alt={productId}
             className="h-auto w-full object-contain p-12"
