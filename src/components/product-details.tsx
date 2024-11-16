@@ -4,7 +4,11 @@ import Link from "next/link";
 import { QuantitySelector } from "./quantity-selector";
 import ResponsiveImage from "./responsive-image";
 
-export default function ProductPage() {
+interface ProductDetailsProps {
+  productId: string;
+}
+
+export default function ProductDetails({ productId }: ProductDetailsProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       <Link

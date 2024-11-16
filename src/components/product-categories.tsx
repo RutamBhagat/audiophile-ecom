@@ -27,8 +27,8 @@ export default function ProductCategories() {
                   deliver truly remarkable sound.
                 </p>
                 <Link
-                  href="#"
-                  className="inline-flex h-12 items-center justify-center bg-black px-8 text-sm font-bold text-white transition-colors hover:bg-gray-900"
+                  href="/products/zx9-speaker"
+                  className="inline-flex h-12 items-center justify-center rounded-none bg-black px-8 text-sm font-medium text-white transition-colors hover:bg-gray-900"
                 >
                   SEE PRODUCT
                 </Link>
@@ -51,8 +51,8 @@ export default function ProductCategories() {
                 ZX7 SPEAKER
               </h2>
               <Link
-                href="#"
-                className="inline-flex h-12 items-center justify-center border border-black bg-transparent px-8 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white"
+                href="/products/zx7-speaker"
+                className="inline-flex h-12 items-center justify-center rounded-none border border-black bg-transparent px-8 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white"
               >
                 SEE PRODUCT
               </Link>
@@ -74,8 +74,8 @@ export default function ProductCategories() {
                 YX1 EARPHONES
               </h2>
               <Link
-                href="#"
-                className="inline-flex h-12 w-fit items-center justify-center border border-black bg-transparent px-8 text-sm font-bold text-black transition-colors hover:bg-black hover:text-white"
+                href="/products/yx1-earphones"
+                className="inline-flex h-12 w-fit items-center justify-center rounded-none border border-black bg-transparent px-8 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white"
               >
                 SEE PRODUCT
               </Link>
