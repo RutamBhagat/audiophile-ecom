@@ -18,7 +18,7 @@ export default function ProductsCarousel() {
             </div>
             <h2 className="mb-4 text-lg font-bold">HEADPHONES</h2>
             <Link
-              href="#"
+              href="/products/xx99-mark-two-headphones"
               className="inline-flex items-center text-sm font-bold text-black hover:text-[#D87D4A]"
             >
               SHOP
@@ -36,7 +36,7 @@ export default function ProductsCarousel() {
             </div>
             <h2 className="mb-4 text-lg font-bold">SPEAKERS</h2>
             <Link
-              href="#"
+              href="/products/zx9-speaker"
               className="inline-flex items-center text-sm font-bold text-black hover:text-[#D87D4A]"
             >
               SHOP
@@ -54,7 +54,7 @@ export default function ProductsCarousel() {
             </div>
             <h2 className="mb-4 text-lg font-bold">EARPHONES</h2>
             <Link
-              href="#"
+              href="/products/yx1-earphones"
               className="inline-flex items-center text-sm font-bold text-black hover:text-[#D87D4A]"
             >
               SHOP

@@ -6,13 +6,18 @@ import ProductDetails from "~/components/product-details";
 import ProductRecommendations from "~/components/product-recommendations";
 import React from "react";
 
-export default function Page({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function ProductPage({ params }: Props) {
+  const { id } = await params;
   return (
     <HydrateClient>
       <div className="mx-auto max-w-7xl">
-        <ProductDetails productId={params.id} />
+        <ProductDetails productId={id} />
         <FeaturesSection />
-        <Gallery productId={params.id} />
+        <Gallery productId={id} />
         <ProductRecommendations />
         <BestGearComponent />
       </div>

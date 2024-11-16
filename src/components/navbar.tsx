@@ -34,21 +34,21 @@ export default function Navbar() {
                 HOME
               </Link>
               <Link
-                href="/headphones"
+                href="/products/xx99-mark-two-headphones"
                 className="flex w-full items-center py-2 text-lg font-medium hover:text-gray-300"
                 prefetch={false}
               >
                 HEADPHONES
               </Link>
               <Link
-                href="/speakers"
+                href="/products/zx9-speaker"
                 className="flex w-full items-center py-2 text-lg font-medium hover:text-gray-300"
                 prefetch={false}
               >
                 SPEAKERS
               </Link>
               <Link
-                href="/earphones"
+                href="/products/yx1-earphones"
                 className="flex w-full items-center py-2 text-lg font-medium hover:text-gray-300"
                 prefetch={false}
               >
@@ -71,21 +71,21 @@ export default function Navbar() {
             HOME
           </Link>
           <Link
-            href="/headphones"
+            href="/products/xx99-mark-two-headphones"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
             HEADPHONES
           </Link>
           <Link
-            href="/speakers"
+            href="/products/zx9-speaker"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
             SPEAKERS
           </Link>
           <Link
-            href="/earphones"
+            href="/products/yx1-earphones"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
