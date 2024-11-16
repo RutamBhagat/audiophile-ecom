@@ -1,6 +1,6 @@
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import Image from "next/image";
+import ResponsiveImage from "./responsive-image";
 
 export default function Summary() {
   return (
@@ -12,11 +12,10 @@ export default function Summary() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
-                <Image
-                  src="/placeholder.svg"
+                <ResponsiveImage
+                  basePath="/assets/product-xx99-mark-two-headphones"
+                  imageName="image-product.jpg"
                   alt="XX99 MK II"
-                  width={64}
-                  height={64}
                   className="object-cover"
                 />
               </div>
@@ -30,11 +29,10 @@ export default function Summary() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
-                <Image
-                  src="/placeholder.svg"
+                <ResponsiveImage
+                  basePath="/assets/product-xx59-headphones"
+                  imageName="image-product.jpg"
                   alt="XX59"
-                  width={64}
-                  height={64}
                   className="object-cover"
                 />
               </div>
@@ -48,11 +46,10 @@ export default function Summary() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
-                <Image
-                  src="/placeholder.svg"
+                <ResponsiveImage
+                  basePath="/assets/product-yx1-earphones"
+                  imageName="image-product.jpg"
                   alt="YX1"
-                  width={64}
-                  height={64}
                   className="object-cover"
                 />
               </div>
