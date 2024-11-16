@@ -1,20 +1,3 @@
----
-title: "Audiophile: Premium Audio E-commerce Website"
-publishedAt: "2024-11-16"
-summary: "Built a modern e-commerce platform for premium audio gear, featuring a responsive design, cart management, and checkout process. Implemented using Next.js, TypeScript, and Tailwind CSS."
-images:
-  - "https://github.com/user-attachments/assets/80f32a0f-65a8-44da-a7c0-82909696a2ea"
-  - "https://github.com/user-attachments/assets/ab2047cd-f282-44a2-bf69-e6dd897b691f"
-  - "https://github.com/user-attachments/assets/1e1c11c1-ca9c-4b90-a795-955ae3f142a9"
-  - "https://github.com/user-attachments/assets/0e78277c-3823-48b6-b07b-be229d7a585c"
-
-team:
-  - name: "Rutam Bhagat"
-    role: "Frontend Developer"
-    avatar: "/images/avatar.jpg"
-    linkedIn: "https://github.com/RutamBhagat"
----
-
 # Audiophile: Premium Audio E-commerce Website
 
 ## Overview
