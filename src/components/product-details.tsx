@@ -16,7 +16,7 @@ export default function ProductPage() {
       </Link>
 
       <div className="grid items-start gap-8 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-lg bg-[#F1F1F1]">
+        <div className="overflow-hidden rounded-none bg-[#F1F1F1]">
           <ResponsiveImage
             basePath="/assets/product-xx99-mark-two-headphones"
             imageName="image-product.jpg"
@@ -46,7 +46,7 @@ export default function ProductPage() {
             <QuantitySelector />
             <Button
               size="lg"
-              className="bg-[#D87D4A] px-8 text-white transition-colors hover:bg-[#FBAF85]"
+              className="rounded-none bg-[#D87D4A] px-8 text-white transition-colors hover:bg-[#FBAF85]"
             >
               ADD TO CART
             </Button>

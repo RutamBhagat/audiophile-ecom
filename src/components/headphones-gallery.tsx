@@ -9,7 +9,7 @@ export function HeadphonesGallery() {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="flex flex-col gap-6">
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden rounded-none">
             <CardContent className="p-0">
               <ResponsiveImage
                 basePath="/assets/product-xx99-mark-two-headphones"
@@ -19,7 +19,7 @@ export function HeadphonesGallery() {
               />
             </CardContent>
           </Card>
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden rounded-none">
             <CardContent className="p-0">
               <ResponsiveImage
                 basePath="/assets/product-xx99-mark-two-headphones"
@@ -30,7 +30,7 @@ export function HeadphonesGallery() {
             </CardContent>
           </Card>
         </div>
-        <Card className="h-full overflow-hidden">
+        <Card className="h-full overflow-hidden rounded-none">
           <CardContent className="h-full p-0">
             <ResponsiveImage
               basePath="/assets/product-xx99-mark-two-headphones"
