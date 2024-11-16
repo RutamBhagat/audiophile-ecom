@@ -3,10 +3,10 @@ title: "Audiophile: Premium Audio E-commerce Website"
 publishedAt: "2024-11-16"
 summary: "Built a modern e-commerce platform for premium audio gear, featuring a responsive design, cart management, and checkout process. Implemented using Next.js, TypeScript, and Tailwind CSS."
 images:
-  - "https://github.com/user-attachments/assets/85720540-b534-4907-bfe3-da125306e684"
-  - "https://github.com/user-attachments/assets/f798dff9-eae2-4818-b0f9-620ea596e034"
-  - "https://github.com/user-attachments/assets/288af3ed-bc70-4191-9bf6-b00c8f44fdd2"
-  - "https://github.com/user-attachments/assets/e31b8075-d5ef-4a28-a113-37fc9f8c2842"
+  - "https://github.com/user-attachments/assets/80f32a0f-65a8-44da-a7c0-82909696a2ea"
+  - "https://github.com/user-attachments/assets/ab2047cd-f282-44a2-bf69-e6dd897b691f"
+  - "https://github.com/user-attachments/assets/1e1c11c1-ca9c-4b90-a795-955ae3f142a9"
+  - "https://github.com/user-attachments/assets/0e78277c-3823-48b6-b07b-be229d7a585c"
 
 team:
   - name: "Rutam Bhagat"
@@ -21,13 +21,13 @@ team:
 
 Audiophile is a modern e-commerce platform that delivers a premium shopping experience for high-end audio equipment. Built as a solution to the Frontend Mentor challenge, this project implements a pixel-perfect design with full responsive layouts and interactive features. The frontend is built using Next.js, TypeScript, and Tailwind CSS, focusing on delivering a seamless user experience across all devices.
 
-**Frontend:** [Audiophile UI](https://audiophile-frontend.vercel.app/)
+**Frontend:** [Audiophile UI](https://audiophile-ecom-eight.vercel.app)
 
-**Frontend Repo:** [Audiophile Frontend](https://github.com/RutamBhagat/audiophile-frontend)
+**Frontend Repo:** [Audiophile Frontend](https://github.com/RutamBhagat/audiophile-ecom)
 
 ## Demo Video
 
-[Watch the Walkthrough](https://github.com/user-attachments/assets/399aae3e-a1fc-4160-b878-4aa43cd28a38)
+[Watch the Walkthrough](https://github.com/user-attachments/assets/64153872-f95f-4057-93c7-5937b9990344)
 
 ## Key Features
 
@@ -45,34 +45,28 @@ Audiophile is a modern e-commerce platform that delivers a premium shopping expe
 - **Components**: Shadcn UI for consistent design system
 - **State Management**: React state hooks and local storage
 - **Form Handling**: React Hook Form with validation
-- **Animation**: Framer Motion for smooth transitions
 
 ## Challenges and Learnings
 
 Building Audiophile provided valuable experience in:
 
 - **Component Architecture**: Creating a scalable system of reusable components
-- **State Management**: Implementing complex cart functionality and data persistence
 - **Responsive Design**: Managing fluid layouts and breakpoints effectively
 - **Form Management**: Building multi-step forms with validation
-- **Performance**: Optimizing images and implementing lazy loading
+- **Performance**: Optimizing images for different breakpoints
 
 ## Optimizations
 
 1. **Image Handling**
 
    - Implemented Next.js Image component for automatic optimization
-   - Added lazy loading for improved initial page load
    - Optimized assets for different viewport sizes
 
 2. **Performance**
-
-   - Utilized local storage for cart persistence
    - Implemented static generation for product pages
    - Optimized asset loading and delivery
 
 3. **User Experience**
-   - Added loading states for interactive elements
    - Implemented smooth transitions between pages
    - Enhanced form feedback and validation
 
@@ -90,8 +84,8 @@ Follow these steps to set up and run the Audiophile website locally.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/RutamBhagat/audiophile-frontend
-   cd audiophile-frontend
+   git clone https://github.com/RutamBhagat/audiophile-ecom
+   cd audiophile-ecom
    ```
 
 2. **Install Dependencies**
@@ -111,11 +105,10 @@ Follow these steps to set up and run the Audiophile website locally.
 
 ## Outcome
 
-Audiophile demonstrates the ability to build a modern e-commerce platform with attention to detail and user experience. The project showcases responsive design principles, state management, and frontend optimization techniques while maintaining clean, maintainable code.
+Audiophile demonstrates the ability to build a modern e-commerce platform with attention to detail and user experience. The project showcases responsive design principles and frontend optimization techniques while maintaining clean, maintainable code.
 
 # Screenshots
 
-![Screenshot 1](https://github.com/user-attachments/assets/85720540-b534-4907-bfe3-da125306e684)
-![Screenshot 2](https://github.com/user-attachments/assets/f798dff9-eae2-4818-b0f9-620ea596e034)
-![Screenshot 3](https://github.com/user-attachments/assets/288af3ed-bc70-4191-9bf6-b00c8f44fdd2)
-![Screenshot 4](https://github.com/user-attachments/assets/e31b8075-d5ef-4a28-a113-37fc9f8c2842)
+![5](https://github.com/user-attachments/assets/ec8d81ef-ca79-42e5-8e62-523cce1737a0)
+![6](https://github.com/user-attachments/assets/3c03109d-5bce-499c-a92a-2f3379d227b4)
+![7](https://github.com/user-attachments/assets/36bdaab0-a368-4de6-ab79-ebef79e9231c)
