@@ -1,29 +1,121 @@
-# Create T3 App
+---
+title: "Audiophile: Premium Audio E-commerce Website"
+publishedAt: "2024-11-16"
+summary: "Built a modern e-commerce platform for premium audio gear, featuring a responsive design, cart management, and checkout process. Implemented using Next.js, TypeScript, and Tailwind CSS."
+images:
+  - "https://github.com/user-attachments/assets/85720540-b534-4907-bfe3-da125306e684"
+  - "https://github.com/user-attachments/assets/f798dff9-eae2-4818-b0f9-620ea596e034"
+  - "https://github.com/user-attachments/assets/288af3ed-bc70-4191-9bf6-b00c8f44fdd2"
+  - "https://github.com/user-attachments/assets/e31b8075-d5ef-4a28-a113-37fc9f8c2842"
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+team:
+  - name: "Rutam Bhagat"
+    role: "Frontend Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://github.com/RutamBhagat"
+---
 
-## What's next? How do I make an app with this?
+# Audiophile: Premium Audio E-commerce Website
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Overview
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Audiophile is a modern e-commerce platform that delivers a premium shopping experience for high-end audio equipment. Built as a solution to the Frontend Mentor challenge, this project implements a pixel-perfect design with full responsive layouts and interactive features. The frontend is built using Next.js, TypeScript, and Tailwind CSS, focusing on delivering a seamless user experience across all devices.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+**Frontend:** [Audiophile UI](https://audiophile-frontend.vercel.app/)
 
-## Learn More
+**Frontend Repo:** [Audiophile Frontend](https://github.com/RutamBhagat/audiophile-frontend)
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Demo Video
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+[Watch the Walkthrough](https://github.com/user-attachments/assets/399aae3e-a1fc-4160-b878-4aa43cd28a38)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Key Features
 
-## How do I deploy this?
+- **Responsive Design**: Fully responsive layouts optimized for mobile, tablet, and desktop viewports
+- **Shopping Cart**: Dynamic cart functionality with real-time updates and persistent storage
+- **Checkout Process**: Multi-step form with comprehensive validation and order summary
+- **Product Showcase**: Detailed product pages with image galleries and related products
+- **Local Storage**: Cart persistence across browser sessions
+- **Form Validation**: Client-side validation with error states and feedback
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Technologies Used
+
+- **Frontend**: Next.js, TypeScript for type-safe development
+- **Styling**: Tailwind CSS for utility-first styling
+- **Components**: Shadcn UI for consistent design system
+- **State Management**: React state hooks and local storage
+- **Form Handling**: React Hook Form with validation
+- **Animation**: Framer Motion for smooth transitions
+
+## Challenges and Learnings
+
+Building Audiophile provided valuable experience in:
+
+- **Component Architecture**: Creating a scalable system of reusable components
+- **State Management**: Implementing complex cart functionality and data persistence
+- **Responsive Design**: Managing fluid layouts and breakpoints effectively
+- **Form Management**: Building multi-step forms with validation
+- **Performance**: Optimizing images and implementing lazy loading
+
+## Optimizations
+
+1. **Image Handling**
+
+   - Implemented Next.js Image component for automatic optimization
+   - Added lazy loading for improved initial page load
+   - Optimized assets for different viewport sizes
+
+2. **Performance**
+
+   - Utilized local storage for cart persistence
+   - Implemented static generation for product pages
+   - Optimized asset loading and delivery
+
+3. **User Experience**
+   - Added loading states for interactive elements
+   - Implemented smooth transitions between pages
+   - Enhanced form feedback and validation
+
+## Getting Started
+
+Follow these steps to set up and run the Audiophile website locally.
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn package manager
+
+### Installation Steps
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/RutamBhagat/audiophile-frontend
+   cd audiophile-frontend
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the Development Server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+## Outcome
+
+Audiophile demonstrates the ability to build a modern e-commerce platform with attention to detail and user experience. The project showcases responsive design principles, state management, and frontend optimization techniques while maintaining clean, maintainable code.
+
+# Screenshots
+
+![Screenshot 1](https://github.com/user-attachments/assets/85720540-b534-4907-bfe3-da125306e684)
+![Screenshot 2](https://github.com/user-attachments/assets/f798dff9-eae2-4818-b0f9-620ea596e034)
+![Screenshot 3](https://github.com/user-attachments/assets/288af3ed-bc70-4191-9bf6-b00c8f44fdd2)
+![Screenshot 4](https://github.com/user-attachments/assets/e31b8075-d5ef-4a28-a113-37fc9f8c2842)
