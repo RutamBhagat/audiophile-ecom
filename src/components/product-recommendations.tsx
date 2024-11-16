@@ -1,6 +1,6 @@
 import { Card, CardContent } from "~/components/ui/card";
 
-import { Button } from "~/components/ui/button";
+import Link from "next/link";
 import ProductsCarousel from "./products-carousel";
 import ResponsiveImage from "~/components/responsive-image";
 
@@ -25,12 +25,12 @@ export default function ProductRecommendations() {
                   />
                 </div>
                 <h3 className="text-xl font-bold">XX99 MARK I</h3>
-                <Button
-                  variant="secondary"
-                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                <Link
+                  href="/products/xx99-mark-one-headphones"
+                  className="inline-block rounded-none bg-[#D87D4A] px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
-                </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -46,12 +46,12 @@ export default function ProductRecommendations() {
                   />
                 </div>
                 <h3 className="text-xl font-bold">XX59</h3>
-                <Button
-                  variant="secondary"
-                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                <Link
+                  href="/products/xx59-headphones"
+                  className="inline-block rounded-none bg-[#D87D4A] px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
-                </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -67,12 +67,12 @@ export default function ProductRecommendations() {
                   />
                 </div>
                 <h3 className="text-xl font-bold">ZX9 SPEAKER</h3>
-                <Button
-                  variant="secondary"
-                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                <Link
+                  href="/products/zx9-speaker"
+                  className="inline-block rounded-none bg-[#D87D4A] px-8 py-4 text-sm font-bold text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
-                </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

@@ -71,21 +71,21 @@ export default function Navbar() {
             HOME
           </Link>
           <Link
-            href="/products/xx99-mark-two-headphones"
+            href="/products/xx99-mark-one-headphones"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
             HEADPHONES
           </Link>
           <Link
-            href="/products/zx9-speaker"
+            href="/products/zx7-speaker"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
             SPEAKERS
           </Link>
           <Link
-            href="/products/yx1-earphones"
+            href="/products/xx59-headphones"
             className="text-sm font-medium transition-colors hover:text-gray-300"
             prefetch={false}
           >
