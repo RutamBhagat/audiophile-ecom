@@ -54,7 +54,7 @@ export default function Component() {
     <div className="min-h-screen bg-[#F1F1F1] px-6 py-8 md:px-10 md:py-12">
       <div className="mx-auto max-w-[1110px]">
         <Link
-          href="#"
+          href="/"
           className="mb-8 inline-flex items-center text-sm text-muted-foreground hover:text-primary"
         >
           <ChevronLeft className="mr-2 h-4 w-4" />

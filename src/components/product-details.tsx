@@ -12,7 +12,7 @@ export default function ProductDetails({ productId }: ProductDetailsProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       <Link
-        href="#"
+        href="/"
         className="mb-8 inline-flex items-center text-sm text-muted-foreground hover:text-primary"
       >
         <ChevronLeft className="mr-2 h-4 w-4" />
