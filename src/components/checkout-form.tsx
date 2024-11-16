@@ -130,7 +130,7 @@ export default function Component() {
                               placeholder="+1 202-555-0136"
                               {...field}
                               defaultCountry="US"
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
