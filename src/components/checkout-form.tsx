@@ -60,7 +60,7 @@ export default function Component() {
         </Button>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_350px]">
-          <Card className="rounded-lg bg-white p-6 md:p-12">
+          <Card className="rounded-none bg-white p-6 md:p-12">
             <h1 className="mb-8 text-[28px] font-bold tracking-[1px]">
               CHECKOUT
             </h1>
@@ -87,7 +87,7 @@ export default function Component() {
                             <Input
                               placeholder="Alexei Ward"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -107,7 +107,7 @@ export default function Component() {
                               placeholder="alexei@mail.com"
                               type="email"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -127,7 +127,7 @@ export default function Component() {
                               placeholder="+1 202-555-0136"
                               {...field}
                               defaultCountry="US"
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -154,7 +154,7 @@ export default function Component() {
                             <Input
                               placeholder="1137 Williams Avenue"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -173,7 +173,7 @@ export default function Component() {
                             <Input
                               placeholder="10001"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -192,7 +192,7 @@ export default function Component() {
                             <Input
                               placeholder="New York"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -211,7 +211,7 @@ export default function Component() {
                             <Input
                               placeholder="United States"
                               {...field}
-                              className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                             />
                           </FormControl>
                           <FormMessage />
@@ -242,7 +242,7 @@ export default function Component() {
                             defaultValue={field.value}
                             className="grid gap-4"
                           >
-                            <FormItem className="flex items-center space-x-3 rounded-lg border border-gray-300 p-4">
+                            <FormItem className="flex items-center space-x-3 rounded-none border border-gray-300 p-4">
                               <FormControl>
                                 <RadioGroupItem
                                   value="e-money"
@@ -253,7 +253,7 @@ export default function Component() {
                                 e-Money
                               </FormLabel>
                             </FormItem>
-                            <FormItem className="flex items-center space-x-3 rounded-lg border border-gray-300 p-4">
+                            <FormItem className="flex items-center space-x-3 rounded-none border border-gray-300 p-4">
                               <FormControl>
                                 <RadioGroupItem
                                   value="cash"
@@ -285,7 +285,7 @@ export default function Component() {
                               <Input
                                 placeholder="238521993"
                                 {...field}
-                                className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                                className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                               />
                             </FormControl>
                             <FormMessage />
@@ -305,7 +305,7 @@ export default function Component() {
                                 placeholder="6891"
                                 type="password"
                                 {...field}
-                                className="rounded-lg border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                                className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
                               />
                             </FormControl>
                             <FormMessage />
@@ -319,7 +319,7 @@ export default function Component() {
             </Form>
           </Card>
 
-          <Card className="h-fit rounded-lg bg-white p-6 md:p-8">
+          <Card className="h-fit rounded-none bg-white p-6 md:p-8">
             <h2 className="mb-8 text-[18px] font-bold tracking-[1px]">
               SUMMARY
             </h2>
@@ -327,7 +327,7 @@ export default function Component() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="h-16 w-16 overflow-hidden rounded-lg bg-[#F1F1F1]">
+                    <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
                       <Image
                         src="/placeholder.svg"
                         alt="XX99 MK II"
@@ -345,7 +345,7 @@ export default function Component() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="h-16 w-16 overflow-hidden rounded-lg bg-[#F1F1F1]">
+                    <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
                       <Image
                         src="/placeholder.svg"
                         alt="XX59"
@@ -363,7 +363,7 @@ export default function Component() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="h-16 w-16 overflow-hidden rounded-lg bg-[#F1F1F1]">
+                    <div className="h-16 w-16 overflow-hidden rounded-none bg-[#F1F1F1]">
                       <Image
                         src="/placeholder.svg"
                         alt="YX1"
@@ -405,7 +405,7 @@ export default function Component() {
               </div>
 
               <Button
-                className="w-full bg-[#D87D4A] text-[13px] font-bold tracking-[1px] text-white hover:bg-[#FBAF85]"
+                className="w-full rounded-none bg-[#D87D4A] text-[13px] font-bold tracking-[1px] text-white hover:bg-[#FBAF85]"
                 type="submit"
               >
                 CONTINUE & PAY
