@@ -5,8 +5,11 @@ import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
+
   return (
     <div className="bg-black">
       <header className="mx-auto flex h-20 w-full max-w-7xl shrink-0 items-center border-b border-gray-800 bg-black px-6 text-white md:px-12">
@@ -89,7 +92,12 @@ export default function Navbar() {
             EARPHONES
           </Link>
         </nav>
-        <Button variant="ghost" size="icon" className="ml-auto text-white">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="ml-auto text-white"
+          onClick={() => router.push("/checkout")}
+        >
           <ShoppingCart className="h-6 w-6" />
           <span className="sr-only">Open cart</span>
         </Button>

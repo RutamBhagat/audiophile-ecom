@@ -29,7 +29,7 @@ export default function Hero() {
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Link
-                  href="#"
+                  href="/products/xx99-mark-two-headphones"
                   className="inline-flex h-12 items-center justify-center rounded-none bg-[#D87D4A] px-8 text-sm font-medium text-white transition-colors hover:bg-[#fbaf85]"
                 >
                   SEE PRODUCT
