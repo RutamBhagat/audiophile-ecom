@@ -27,7 +27,7 @@ export default function ProductRecommendations() {
                 <h3 className="text-xl font-bold">XX99 MARK I</h3>
                 <Button
                   variant="secondary"
-                  className="bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
                 </Button>
@@ -48,7 +48,7 @@ export default function ProductRecommendations() {
                 <h3 className="text-xl font-bold">XX59</h3>
                 <Button
                   variant="secondary"
-                  className="bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
                 </Button>
@@ -69,7 +69,7 @@ export default function ProductRecommendations() {
                 <h3 className="text-xl font-bold">ZX9 SPEAKER</h3>
                 <Button
                   variant="secondary"
-                  className="bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
+                  className="rounded-none bg-[#D87D4A] text-white transition-colors hover:bg-[#FBAF85]"
                 >
                   SEE PRODUCT
                 </Button>
