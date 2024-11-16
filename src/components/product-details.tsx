@@ -24,7 +24,7 @@ export default function ProductDetails({ productId }: ProductDetailsProps) {
           <ResponsiveImage
             basePath="/assets/product-xx99-mark-two-headphones"
             imageName="image-product.jpg"
-            alt="XX99 Mark II Headphones"
+            alt={productId}
             className="h-auto w-full object-contain p-12"
             priority
           />
@@ -34,14 +34,14 @@ export default function ProductDetails({ productId }: ProductDetailsProps) {
           <div className="space-y-4">
             <p className="text-sm tracking-[0.5em] text-primary">NEW PRODUCT</p>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-              XX99 MARK II HEADPHONES
+              {productId}
             </h1>
           </div>
 
           <p className="leading-relaxed text-muted-foreground">
-            The new XX99 Mark II headphones is the pinnacle of pristine audio.
-            It redefines your premium headphone experience by reproducing the
-            balanced depth and precision of studio-quality sound.
+            The new {productId} is the pinnacle of pristine audio. It redefines
+            your premium headphone experience by reproducing the balanced depth
+            and precision of studio-quality sound.
           </p>
 
           <div className="text-3xl font-bold">$ 2,999</div>
