@@ -43,6 +43,7 @@ export default function Component() {
     defaultValues: {
       paymentMethod: "e-money",
     },
+    mode: "onChange", // Add this line
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -88,7 +89,11 @@ export default function Component() {
                             <Input
                               placeholder="Alexei Ward"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.name
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -108,7 +113,11 @@ export default function Component() {
                               placeholder="alexei@mail.com"
                               type="email"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.email
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -128,7 +137,11 @@ export default function Component() {
                               placeholder="+1 202-555-0136"
                               {...field}
                               defaultCountry="US"
-                              className="border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.phone
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -155,7 +168,11 @@ export default function Component() {
                             <Input
                               placeholder="1137 Williams Avenue"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.address
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -174,7 +191,11 @@ export default function Component() {
                             <Input
                               placeholder="10001"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.zipCode
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -193,7 +214,11 @@ export default function Component() {
                             <Input
                               placeholder="New York"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.city
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -212,7 +237,11 @@ export default function Component() {
                             <Input
                               placeholder="United States"
                               {...field}
-                              className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                              className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                form.formState.errors.country
+                                  ? "border-[#CD2C2C]"
+                                  : ""
+                              }`}
                             />
                           </FormControl>
                           <FormMessage />
@@ -286,7 +315,11 @@ export default function Component() {
                               <Input
                                 placeholder="238521993"
                                 {...field}
-                                className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                                className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                  form.formState.errors.eMoneyNumber
+                                    ? "border-[#CD2C2C]"
+                                    : ""
+                                }`}
                               />
                             </FormControl>
                             <FormMessage />
@@ -306,7 +339,11 @@ export default function Component() {
                                 placeholder="6891"
                                 type="password"
                                 {...field}
-                                className="rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0"
+                                className={`rounded-none border-gray-300 focus:border-[#D87D4A] focus:ring-0 ${
+                                  form.formState.errors.eMoneyPin
+                                    ? "border-[#CD2C2C]"
+                                    : ""
+                                }`}
                               />
                             </FormControl>
                             <FormMessage />
